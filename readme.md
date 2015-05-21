@@ -14,25 +14,43 @@
     + Navigate to Source in Terminal and enter:  `code .`
     + VS Code will open at this location
     
-2. Install **ASP.NET 5** on Mac OS X
+2. Install **ASP.NET 5** on Linux Ubuntu
 
   - Instructions: http://docs.asp.net/en/latest/getting-started/installing-on-linux.html
-  - Install Homebrew if needed
-    + ```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
-    + Install command line developer tools when prompted
-  - Uninstall `kvm` if previously installed
-  - Get homebrew `dnx` repo (tap)
+  - Install Mono:
     ```
-    brew tap aspnet/dnx
-    ``` 
-  - To update `dnx` repo: untap then tap
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+    echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+    sudo apt-get update
+    sudo apt-get install Mono-Complete
+    ```
+  - Install libuv
+    ```
+    sudo apt-get install automake libtool curl
+    curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | sudo tar zxfv - -C /usr/local/src
+    cd /usr/local/src/libuv-1.4.2
+    sudo sh autogen.sha
+    sudo ./configure
+    sudo make
+    sudo make install
+    sudo rm -rf /usr/local/src/libuv-1.4.2 && cd ~/
+    sudo ldconfig
+    ```
   - Install DotNet Version Manager: `dnvm`
     ```
-    brew install dnvm
-    dnvm
-    dnvm upgrade
+    curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh    ```
+  - Run `dnvm`
+  - Add a NuGet.config file: `~/.config/NuGet/NuGet.config`
     ```
-  - If ```dnvm``` will not run enter: ```source dnvm.sh```
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+      <packageSources>
+        <add key="AspNetVNext" value="https://www.myget.org/F/aspnetvnext/api/v2/" />
+        <add key="nuget.org" value="https://www.nuget.org/api/v2/" />
+      </packageSources>
+      <disabledPackageSources />
+    </configuration>
+    ```
   
 3. Run **console sample**
   - Create ConsoleApp folder

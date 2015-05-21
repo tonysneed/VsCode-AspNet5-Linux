@@ -66,7 +66,7 @@
   
     `sudo npm install -g yo grunt-cli generator-aspnet bower`
   - Go to parent folder in Terminal and run `yo aspnet`
-    + Pick Web API Application, enter as name: HelloWebApi
-  - Run `dnu restore`, then run as before
-  - Open a browser and go to: http://localhost:5001/api/values
+    + Pick Web API Application, enter as name: **HelloWebApi**
+  - Run `dnu restore`, then run as before: `dnx . kestrel`
+  - Open a browser and go to: `http://localhost:5001/api/values`
   - Press Enter to stop Kestrel

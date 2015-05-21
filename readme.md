@@ -49,7 +49,7 @@
   - Restore packages: `dnu restore`
   - Run the app: `dnx . run`
   
-4. Run ** web sample**
+4. Run **web sample**
   - Create WebApp folder
   - Go to the aspnet repo: https://github.com/aspnet/Home/tree/dev/samples/latest/HelloWeb
   - Download: project.json, startup.cs

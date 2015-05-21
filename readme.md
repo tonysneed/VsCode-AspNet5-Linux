@@ -37,21 +37,11 @@
     sudo ldconfig
     ```
   - Install DotNet Version Manager: `dnvm`
-    ```
-    curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh    ```
+    `curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.s`
+  - Enter: `source /home/parallels/.dnx/dnvm/dnvm.sh`
   - Run `dnvm`
-  - Add a NuGet.config file: `~/.config/NuGet/NuGet.config`
-    ```
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-      <packageSources>
-        <add key="AspNetVNext" value="https://www.myget.org/F/aspnetvnext/api/v2/" />
-        <add key="nuget.org" value="https://www.nuget.org/api/v2/" />
-      </packageSources>
-      <disabledPackageSources />
-    </configuration>
-    ```
-  
+  - Enter: `dnvm upgrade`
+
 3. Run **console sample**
   - Create ConsoleApp folder
   - Go to the aspnet repo: https://github.com/aspnet/Home/tree/dev/samples/latest/ConsoleApp
@@ -67,15 +57,11 @@
   - Run the app: `dnx . kestrel`
   - Open a browser and go to: http://localhost:5004
   - Try stopping kestrel by pressing Enter
-  - If it does not stop, open another terminal to kill the process:
-    ```
-    ps {To see a list of PIDS}
-    kill -9 {PID #}
-    ```
 
 5. Scaffold an **ASP.NET Web API** app using **Yeoman**
-  - If necessary install the node package manager: `npm`
-    + Download: https://nodejs.org/download
+  - Install the node package manager: `npm`:
+
+    `sudo apt-get install nodejs-legacy npm`
   - Install Yeoman, the asp.net generator, grunt and bower:
   
     `sudo npm install -g yo grunt-cli generator-aspnet bower`
@@ -83,4 +69,4 @@
     + Pick Web API Application, enter as name: HelloWebApi
   - Run `dnu restore`, then run as before
   - Open a browser and go to: http://localhost:5001/api/values
-  - Press Enter to stop Kestrel, or kill as before
+  - Press Enter to stop Kestrel

@@ -40,7 +40,8 @@
     sudo ldconfig
     ```
   - Install DotNet Version Manager: `dnvm`
-    `curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.s`
+
+  `curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.s`
   - Enter: `source /home/parallels/.dnx/dnvm/dnvm.sh`
   - Run `dnvm`
   - Enter: `dnvm upgrade`

@@ -7,6 +7,7 @@
   - Under Home, create a folder called **VSCode**.
   - Extract downloaded zip file to this location
   - Create a link to launch Code from Terminal by typing `code .`
+
     ```
     sudo ln -s /home/parallels/VSCode/Code /usr/local/bin/code
     ```
@@ -18,6 +19,7 @@
 
   - Instructions: http://docs.asp.net/en/latest/getting-started/installing-on-linux.html
   - Install Mono:
+
     ```
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
     echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
@@ -25,6 +27,7 @@
     sudo apt-get install Mono-Complete
     ```
   - Install libuv
+
     ```
     sudo apt-get install automake libtool curl
     curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | sudo tar zxfv - -C /usr/local/src
